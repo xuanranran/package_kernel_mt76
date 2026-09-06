@@ -1,0 +1,32 @@
+{
+  "immortalwrt_revision": "7089af38d165a2105e0736fb7e8823bf17f12e82",
+  "sbwml_revision": "f8d3e0306022ac9ca6101421c93d0feb32a21af1",
+  "mt76_revision": "be5ce7910521492d4a2e4ce7ee3843680a46c047",
+  "imports": [
+    {
+      "path": "Makefile",
+      "url": "https://raw.githubusercontent.com/immortalwrt/immortalwrt/7089af38d165a2105e0736fb7e8823bf17f12e82/package/kernel/mt76/Makefile",
+      "sha256": "f3e466d4fe593f1400415e08e40859c1d07415912aa7eebcf384ae260f462ee0"
+    },
+    {
+      "path": "patches/110-mt7996-use-default-tx-power-for-zero-eeprom.patch",
+      "url": "https://raw.githubusercontent.com/immortalwrt/immortalwrt/7089af38d165a2105e0736fb7e8823bf17f12e82/package/kernel/mt76/patches/100-wifi-mt76-mt7996-Use-tx_power-from-default-fw-if-EEP.patch",
+      "sha256": "c8aba1f8bd5f76c1e3a7f06d0eb60bab28592cc76fda7c516df64de6111fe4b2"
+    },
+    {
+      "path": "patches/100-fix-build-with-linux-6.12rc2.patch",
+      "url": "https://raw.githubusercontent.com/sbwml/r4s_build_script/f8d3e0306022ac9ca6101421c93d0feb32a21af1/openwrt/patch/mt76/patches/100-fix-build-with-linux-6.12rc2.patch",
+      "sha256": "36e8106009f8adff71978248b7277092d8c2a98e039b8675fe21d34c97647855"
+    },
+    {
+      "path": "src/firmware/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin",
+      "url": "https://raw.githubusercontent.com/sbwml/r4s_build_script/f8d3e0306022ac9ca6101421c93d0feb32a21af1/openwrt/patch/mt76/src/firmware/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin",
+      "sha256": "5e7a824c01a41b59bc9d4c4ecf3f0b09d977638c1a0bf025bc1ed1f3dbed59d3"
+    },
+    {
+      "path": "src/firmware/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin",
+      "url": "https://raw.githubusercontent.com/sbwml/r4s_build_script/f8d3e0306022ac9ca6101421c93d0feb32a21af1/openwrt/patch/mt76/src/firmware/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin",
+      "sha256": "ce46cff45e802f45dd4af9ed09ee45a760c3a7f626390a00771c42bde50252f4"
+    }
+  ]
+}
