@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mt76
-PKG_RELEASE=1
+PKG_RELEASE=2
 
 PKG_LICENSE:=BSD-3-Clause-Clear
 PKG_LICENSE_FILES:=
@@ -370,6 +370,12 @@ define KernelPackage/mt7925-firmware
   DEPENDS+=+kmod-mt7925e
 endef
 
+define KernelPackage/mt7927-firmware
+  $(KernelPackage/mt76-default)
+  TITLE:=MediaTek MT7927 firmware
+  DEPENDS+=+kmod-mt7925e
+endef
+
 define KernelPackage/mt7925-common
   $(KernelPackage/mt76-default)
   TITLE:=MediaTek MT7925 wireless driver common code
@@ -671,6 +677,14 @@ define KernelPackage/mt7925-firmware/install
 		$(1)/lib/firmware/mediatek/mt7925
 endef
 
+define KernelPackage/mt7927-firmware/install
+	$(INSTALL_DIR) $(1)/lib/firmware/mediatek/mt7927
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/firmware/mt7927/WIFI_MT6639_PATCH_MCU_2_1_hdr.bin \
+		$(PKG_BUILD_DIR)/firmware/mt7927/WIFI_RAM_CODE_MT6639_2_1.bin \
+		$(1)/lib/firmware/mediatek/mt7927
+endef
+
 define KernelPackage/mt7990-firmware/install
 	$(INSTALL_DIR) $(1)/lib/firmware/mediatek/mt7996
 	cp \
@@ -775,6 +789,7 @@ $(eval $(call KernelPackage,mt7986-firmware))
 $(eval $(call KernelPackage,mt7921-firmware))
 $(eval $(call KernelPackage,mt7922-firmware))
 $(eval $(call KernelPackage,mt7925-firmware))
+$(eval $(call KernelPackage,mt7927-firmware))
 $(eval $(call KernelPackage,mt792x-common))
 $(eval $(call KernelPackage,mt792x-usb))
 $(eval $(call KernelPackage,mt7921-common))
