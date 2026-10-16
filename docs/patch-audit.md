@@ -24,3 +24,16 @@
 原日志中的 mac80211 接口错误也已由新版源码解决：`mt7925/mac.c` 使用 `IEEE80211_MIN_ACTION_SIZE(action_code)`，公共 Connac 代码使用 `IEEE80211_MIN_ACTION_SIZE(addba_req.capab)`；action_code 与 capab 使用新结构路径，MCU 代码使用新的 EML 宏名称。
 
 这些结果证明补丁整理与当前源码一致，不代表已经通过交叉编译或无线硬件测试。320 MHz 能力仍由芯片、频段和固件决定；旧 205 补丁本身也仅对 MT7927 开启该能力。
+
+## 2026-10-16 更新复核
+
+当前目标更新为 `467ae2e3f190baf737e15e318906da0dc7d0ab91`（2026-10-08），与 OpenWrt、ImmortalWrt master 的 mt76 版本一致。上面的逐项表格保留为首次审计记录。
+
+- 两个外置补丁已在新提交的完整源码副本中依次通过检查和应用，无须修改补丁内容。
+- ImmortalWrt 的 MT7996 补丁内容及 SHA-256 未变化。
+- MT7927 两个固件的 SHA-256 与驱动路径验证通过，继续使用原固定版本。
+- 新源码仍包含 MT7927 芯片识别、320 MHz 能力、中断映射以及省电规避逻辑；保留新版实现。
+- OpenWrt 与 ImmortalWrt 当前的 mac80211/backports 均为 7.2。
+- `PKG_MIRROR_HASH` 采用上游包定义的值；下载的 GitHub 源码归档仅用于源码与补丁验证，不作为 OpenWrt 镜像归档哈希的替代。
+
+本次未执行完整交叉编译或硬件测试。

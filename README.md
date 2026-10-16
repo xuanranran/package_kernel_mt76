@@ -4,8 +4,8 @@
 
 ## 当前版本
 
-- mt76：`2026-09-01`，提交 `be5ce7910521492d4a2e4ce7ee3843680a46c047`。
-- 包定义基于 ImmortalWrt `7089af38d165a2105e0736fb7e8823bf17f12e82`。
+- mt76：`2026-10-08`，提交 `467ae2e3f190baf737e15e318906da0dc7d0ab91`。
+- 包定义基于 ImmortalWrt `2248ed75465327b4eed0ffcc3ece361dc1e62d75`。
 - 保留 ImmortalWrt 的 MT7922 固件依赖、MediaTek 平台 WED 默认设置和平台限制。
 - 新增 `kmod-mt7927-firmware`，驱动仍使用 `kmod-mt7925e`。
 - 源码与固件固定版本；构建时不会从浮动 master 下载自定义补丁。
